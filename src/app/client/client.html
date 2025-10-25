@@ -1,0 +1,41 @@
+<!-- <p>client works!</p> -->
+<h2>Create a Client</h2>
+<p>Please fill in this form to create a client </p>
+<form (ngSubmit)="addClient()" class="client-form">
+  <label>
+    Name:
+    <input [(ngModel)]="name" name="name" placeholder="Enter Name" required>
+  </label>
+
+  <label>
+    Email:
+    <input [(ngModel)]="email" name="email" placeholder=" Enter Email" type="email" required>
+  </label>
+
+  <label>
+    Address:
+    <input [(ngModel)]="Address" name="Address" placeholder="Enter Address" required>
+  </label>
+
+  <label>
+    Password:
+    <input [(ngModel)]="Password" name="Password" placeholder="Enter Password" required>
+  </label>
+  <label>
+   Repeat Password:
+    <input [(ngModel)]="Password" name="Password" placeholder="Repeat Password" required>
+  </label>
+
+  <hr>
+
+  <button type="Register">Register</button>
+</form>
+
+<hr>
+
+<!-- <h3>Clients List</h3> -->
+<ul>
+  <li *ngFor="let c of clients">
+    <strong>{{ c.name }}</strong> — {{ c.email }} — {{ c.Address}} — {{ c.Password}}— {{ c.Password}}
+  </li>
+</ul>

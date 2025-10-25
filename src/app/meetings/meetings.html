@@ -1,0 +1,92 @@
+<!-- <h2>Create a Meeting Schedule</h2>
+<hr>
+<form (ngSubmit)="addMeeting()" class="meeting-form">
+  <label>
+    Meetiing Topic:
+    <input [(ngModel)]="Meeting Topic" name="topic" placeholder="Meeting Topic" required>
+  </label>
+
+  <label>
+    Number of people:
+    <input [(ngModel)]="Number of People" name="topic" placeholder="Enter Number of people" required>
+  </label>
+  <label>
+    Select Client:
+    <select [(ngModel)]="client" name="client" required>
+      <option value="" disabled selected>Select a client</option>
+      <option *ngFor="let c of clients" [value]="c.name">{{ c.name }} ({{ c.email }})</option>
+    </select>
+  </label>
+
+  <button type="submit">Schedule</button>
+</form>
+
+<hr>
+
+<h3>All Meetings</h3>
+<ul>
+  <li *ngFor="let m of meetings">
+    {{ m.date }} - {{ m.time }} ({{ m.topic }}) → <strong>{{ m.client }}</strong>
+  </li>
+</ul> -->
+
+
+<h2>Create a Meeting Schedule</h2>
+<hr>
+
+<form (ngSubmit)="addMeeting()" class="meeting-form">
+  <!-- Meeting Topic -->
+  <label>
+    Meeting Topic:
+    <input [(ngModel)]="meeting.topic" name="topic" placeholder="Enter meeting topic" required />
+  </label>
+
+  <!-- Number of People -->
+  <label>
+    Number of People:
+    <input
+      type="number"
+      [(ngModel)]="meeting.numberOfPeople"
+      name="numberOfPeople"
+      placeholder="Enter number of people"
+      required
+    />
+  </label>
+
+  <!-- Start Time -->
+  <label>
+    Start Time:
+    <input
+      type="datetime-local"
+      [(ngModel)]="meeting.startTime"
+      name="startTime"
+      required
+    />
+  </label>
+
+  <!-- Select Client -->
+  <!-- <label>
+    Select Client:
+    <select [(ngModel)]="meeting.client" name="client" required>
+      <option value="" disabled selected>Select a client</option>
+      <option *ngFor="let c of clients" [value]="c.name">
+        {{ c.name }} ({{ c.email }})
+      </option>
+    </select>
+  </label> -->
+
+  <!-- Submit Button -->
+  <button type="submit">Schedule</button>
+</form>
+
+<hr>
+
+<h3>All Meetings</h3>
+<ul>
+  <li *ngFor="let m of meetings">
+    {{ m.startTime | date: 'medium' }} -
+    <strong>{{ m.topic }}</strong>
+    ({{ m.numberOfPeople }} people)
+    → <em>{{ m.client }}</em>
+  </li>
+</ul>

@@ -1,0 +1,51 @@
+.container {
+  display: flex;
+  justify-content: space-between; /* space between them */
+  align-items: flex-start; /* align top edges */
+  gap: 30px; /* spacing between components */
+  padding: 30px;
+  width :100%;
+  box-sizing : border-box;
+}
+
+app-client,
+app-meetings {
+  flex: 1; /* each takes equal space */
+  max-width: 48%; /* optional to prevent stretching */
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  background: #f9f9f9;
+  box-shadow: 0 2px 5px 8px rgba(0, 0, 0, 0.1);
+}
+/* input , select,button {
+   width :100%;
+   padding:8px;
+   margin-top:5px;
+   margin-bottom:10px;
+   box-sizing :border-box;
+}
+
+button{
+    background-color:#28a745;
+    color:white;
+    border:none;
+    border-radius: 10px;
+    cursor:pointer;
+    font-size:16px;
+} */
+button:hover{
+    background-color: #218838;
+}
+
+@media(max-width:768px){
+    .container{
+        flex-direction: column;
+        align-items: center;
+
+    }
+    app-client,
+    app-meetings{
+        max-width: 90%;
+    }
+}
